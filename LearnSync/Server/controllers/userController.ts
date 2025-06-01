@@ -1,0 +1,92 @@
+// server/controllers/userController.ts
+
+import { Request, Response } from 'express';
+import * as bcrypt from 'bcryptjs'; // Для хеширования паролей
+import * as jwt from 'jsonwebtoken'; // Для создания JWT
+import * as dotenv from 'dotenv'; // Для загрузки переменных окружения
+import { UserModel } from '../models/userModel'; // Модель пользователя
+
+// Загружаем переменные окружения из .env
+dotenv.config();
+
+// Секретный ключ для подписи JWT
+const JWT_SECRET = process.env.JWT_SECRET || 'default_secret_key';
+
+// Регистрация нового пользователя
+export const registerUser = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const { username, email, password } = req.body;
+
+        // Проверяем, существует ли пользователь с таким email
+        const existingUser = await UserModel.findOne({ email });
+        if (existingUser) {
+            res.status(400).json({ message: 'User with this email already exists' });
+            return;
+        }
+
+        // Хешируем пароль
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Создаем нового пользователя
+        const newUser = new UserModel({
+            username,
+            email,
+            password: hashedPassword,
+        });
+
+        // Сохраняем пользователя в базе данных
+        await newUser.save();
+
+        res.status(201).json({ message: 'User registered successfully', user: { username, email } });
+    } catch (error) {
+        console.error('Error during registration:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+// Вход пользователя в систему
+export const loginUser = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const { email, password } = req.body;
+
+        // Находим пользователя по email
+        const user = await UserModel.findOne({ email });
+        if (!user) {
+            res.status(400).json({ message: 'Invalid credentials' });
+            return;
+        }
+
+        // Проверяем пароль
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            res.status(400).json({ message: 'Invalid credentials' });
+            return;
+        }
+
+        // Создаем JWT
+        const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: '1h' });
+
+        res.status(200).json({ message: 'Login successful', token });
+    } catch (error) {
+        console.error('Error during login:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+// Получить информацию о пользователе по ID
+export const getUserById = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const userId = req.params.id;
+
+        const user = await UserModel.findById(userId).select('-password'); // Исключаем поле password
+        if (!user) {
+            res.status(404).json({ message: 'User not found' });
+            return;
+        }
+
+        res.status(200).json({ message: 'User retrieved successfully', user });
+    } catch (error) {
+        console.error('Error fetching user by ID:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};

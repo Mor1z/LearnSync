@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",          /* Целевая версия JavaScript */
+    "module": "CommonJS",        /* Система модулей (CommonJS для Node.js) */
+    "strict": true,             /* Включение строгого режима TypeScript */
+    "esModuleInterop": true,    /* Позволяет работать с CommonJS модулями */
+    "skipLibCheck": true,       /* Пропуск проверки типов из внешних библиотек */
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",         /* Директория для скомпилированных файлов */
+    "rootDir": "./src",         /* Директория с исходным кодом */
+    "sourceMap": true           /* Создание source map для отладки */
+  },
+  "include": ["src/**/*"],      /* Файлы, которые нужно включить в компиляцию */
+  "exclude": ["node_modules"]   /* Исключаем node_modules */
+}

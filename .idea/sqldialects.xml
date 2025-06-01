@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/LearnSync/Server/migrations/001_create_users_table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/LearnSync/Server/migrations/001_create_users_table.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/LearnSync/Server/migrations/002_create_courses_table.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/LearnSync/Server/migrations/003_create_lessons_table.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/LearnSync/Server/migrations/004_create_progress_table.sql" dialect="SQLite" />
   </component>
 </project>
