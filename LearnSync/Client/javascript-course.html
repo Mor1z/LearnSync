@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс | JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для страницы курса */
+        .course-container {
+    max-width: 900px; /* Или другая ширина */
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex; /* Делаем контейнер Flex */
+    flex-direction: column; /* Располагаем элементы в колонку */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+        .course-title {
+            text-align: center; /* Центрируем название курса */
+            margin-bottom: 20px; /* Отступ снизу названия */
+        }
+
+        .course-video {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+    max-width: 1280px;
+}
+
+.course-video iframe,
+.course-video object,
+.course-video embed {
+    width: 100%; /* Видео занимает 100% ширины родителя (1280px) */
+    height: 100%; /* Видео занимает 100% высоты родителя (720px) */
+}
+
+
+        .course-info {
+            margin-bottom: 30px; /* Отступ снизу информации */
+            color: white;
+        }
+
+        .course-info h2 {
+            margin-top: 0;
+            color: white;
+        }
+
+        .course-title{
+            color: white;
+        }
+
+        /* Стили для центрирования контента, если нужно */
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-btn"></a>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="courses.html">Курсы</a></li>
+                </ul>
+            </nav>
+            <button class="user-avatar-btn" id="profileBtn"></button>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <h1 class="course-title">Курс JavaScript с нуля</h1>
+
+        <div class="course-video">
+            <video controls width="1280" height="720" poster="images/javascript.jpg">
+                <source src="video/moe-video.mp4" type="video/mp4">
+                <source src="video/moe-video.webm" type="video/webm">
+                Ваш браузер не поддерживает тег video.
+            </video>
+        </div>
+
+        <div class="course-info">
+    <h1 class="course-title">JavaScript для начинающих: Оживите ваш сайт с нуля</h1>
+
+    <h2>Краткое описание:</h2>
+    <p>
+        Этот курс создан для тех, кто хочет научиться добавлять интерактивность и динамическое поведение на свои веб-страницы. JavaScript - это "язык действий" в мире веб-разработки, позволяющий создавать анимацию, игры, веб-приложения и многое другое. Если вы новичок и хотите освоить его основы, этот курс - отличная отправная точка.
+    </p>
+
+    <h2>Кому подходит этот курс:</h2>
+    <ul>
+        <li>Полным новичкам в веб-разработке, у которых есть базовое представление об HTML и CSS.</li>
+        <li>Тем, кто уже умеет верстать (HTML/CSS), но хочет добавить функциональности и динамики на свои сайты.</li>
+        <li>Всем, кто хочет понять, как работают скрипты в браузере и как управлять элементами веб-страницы.</li>
+    </ul>
+
+    <h2>Что вы узнаете:</h2>
+    <ul>
+        <li>
+            <strong>Основы JavaScript:</strong> Что такое JavaScript, где он используется и как его подключить к HTML.
+            <pre><code>
+&lt;!-- Подключение внешнего скрипта --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+&lt;!-- Встроенный скрипт --&gt;
+&lt;script&gt;
+  // Ваш JavaScript код здесь
+  console.log("Привет, мир!");
+&lt;/script&gt;
+            </code></pre>
+        </li>
+        <li>
+            <strong>Переменные и типы данных:</strong> Как хранить информацию и работать с различными типами данных (строки, числа, булевы значения, null, undefined, Symbol, BigInt).
+            <pre><code>
+let userName = "Алиса"; // Строка
+const age = 30; // Число
+let isActive = true; // Булево значение
+let score = null; // Null
+let result; // Undefined
+            </code></pre>
+        </li>
+        <li>
+            <strong>Операторы:</strong> Арифметические (+, -, *, /), логические (&&, ||, !), операторы сравнения (==, !=, ===, !==, &gt;, &lt;, &gt;=, &lt;=).
+            <pre><code>
+let sum = 5 + 3;
+let isAdult = age &gt;= 18;
+let canAccess = isAdult && isActive;
+            </code></pre>
+        </li>
+        <li>
+            <strong>Условные конструкции:</strong> `if`, `else`, `else if`, `switch` для принятия решений в коде.
+            <pre><code>
+if (score &gt; 90) {
+  console.log("Отлично!");
+} else if (score &gt; 70) {
+  console.log("Хорошо!");
+} else {
+  console.log("Нужно поработать.");
+}
+            </code></pre>
+        </li>
+        <li>
+            <strong>Циклы:</strong> `for`, `while`, `do...while`, `for...of`, `for...in` для повторения действий.
+            <pre><code>
+for (let i = 0; i &lt; 5; i++) {
+  console.log(i);
+}
+
+let count = 0;
+while (count &lt; 3) {
+  console.log(count);
+  count++;
+}
+            </code></pre>
+        </li>
+        <li>
+            <strong>Функции:</strong> Как писать многоразовый код и организовывать его в функции.
+            <pre><code>
+function greet(name) {
+  return "Привет, " + name + "!";
+}
+
+let greeting = greet("Боб");
+console.log(greeting);
+            </code></pre>
+        </li>
+        <li>
+            <strong>Объекты и массивы:</strong> Как работать со структурированными данными.
+            <pre><code>
+let user = {
+  name: "Чарли",
+  age: 25,
+  city: "Лондон"
+};
+
+let fruits = ["Яблоко", "Банан", "Вишня"];
+
+console.log(user.name);
+console.log(fruits[1]);
+            </code></pre>
+        </li>
+        <li>
+            <strong>Работа с DOM (Document Object Model):</strong> Как находить элементы на странице, изменять их содержимое, стили и атрибуты с помощью JavaScript.
+            <pre><code>
+let element = document.getElementById("myElement");
+element.textContent = "Новый текст";
+element.style.color = "blue";
+            </code></pre>
+        </li>
+        <li>
+            <strong>События:</strong> Как реагировать на действия пользователя (клики, наведение мыши, ввод текста и др.).
+            <pre><code>
+let myButton = document.getElementById("myButton");
+myButton.addEventListener("click", function() {
+  alert("Кнопка нажата!");
+});
+            </code></pre>
+        </li>
+        <li>
+            <strong>Введение в асинхронность:</strong> Понимание основ асинхронного программирования (callbacks, Promises - на базовом уровне).
+             <pre><code>
+// Пример с setTimeout
+setTimeout(function() {
+  console.log("Выполнится через 1 секунду");
+}, 1000);
+            </code></pre>
+        </li>
+    </ul>
+
+    <h2>Требования:</h2>
+    <ul>
+        <li>Базовое понимание HTML и CSS.</li>
+        <li>Желание учиться и практиковаться.</li>
+        <li>Компьютер с установленным текстовым редактором (например, VS Code, Sublime Text) и современным браузером.</li>
+    </ul>
+
+    <h2>Почему стоит пройти этот курс:</h2>
+    <ul>
+        <li>**Практический подход:** Мы будем создавать интерактивные элементы и простые мини-приложения.</li>
+        <li>**От простого к сложному:** Материал излагается постепенно, начиная с самых основ синтаксиса.</li>
+        <li>**Понятные объяснения:** Сложные концепции объясняются простым и доступным языком.</li>
+        <li>**Фундаментальные знания:** Вы получите прочную основу для изучения более продвинутых тем и фреймворков (React, Vue, Angular).</li>
+        <li>**Создание интерактивных сайтов:** После курса вы сможете добавить динамики и оживить ваши веб-проекекты.</li>
+    </ul>
+
+    <h2>Программа курса (пример):</h2>
+    <ul>
+        <li>Модуль 1: Введение в JavaScript и его подключение</li>
+        <li>Модуль 2: Переменные, типы данных и операторы</li>
+        <li>Модуль 3: Условные конструкции и циклы</li>
+        <li>Модуль 4: Функции</li>
+        <li>Модуль 5: Объекты и массивы</li>
+        <li>Модуль 6: Введение в DOM</li>
+        <li>Модуль 7: Обработка событий</li>
+        <li>Модуль 8: Практические примеры и мини-проекты</li>
+        <li>Модуль 9: Введение в асинхронность (опционально)</li>
+        <li>Модуль 10: Заключение и дальнейшие шаги</li>
+    </ul>
+
+    <h2>После прохождения курса вы сможете:</h2>
+    <ul>
+        <li>Писать простой JavaScript код для веб-страниц.</li>
+        <li>Манипулировать элементами HTML с помощью DOM.</li>
+        <li>Реагировать на действия пользователя.</li>
+        <li>Добавлять базовую интерактивность на свои сайты.</li>
+    </ul>
+
+    <p><strong>Готовы добавить функциональности вашим веб-сайтам? Записывайтесь на курс "JavaScript для начинающих" и начните кодить!</strong></p>
+
+</div>
+
+
+    </div>
+
+    <footer>
+        <p>Learn Sync © 2025</p>
+    </footer>
+
+</body>
+</html>

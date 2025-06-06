@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс | Git</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для страницы курса */
+        .course-container {
+    max-width: 900px; /* Или другая ширина */
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex; /* Делаем контейнер Flex */
+    flex-direction: column; /* Располагаем элементы в колонку */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+        .course-title {
+            text-align: center; /* Центрируем название курса */
+            margin-bottom: 20px; /* Отступ снизу названия */
+        }
+
+        .course-video {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+    max-width: 1280px;
+}
+
+.course-video iframe,
+.course-video object,
+.course-video embed {
+    width: 100%; /* Видео занимает 100% ширины родителя (1280px) */
+    height: 100%; /* Видео занимает 100% высоты родителя (720px) */
+}
+
+
+.course-info {
+            margin-bottom: 30px; /* Отступ снизу информации */
+            color: white;
+        }
+
+        .course-info h2 {
+            margin-top: 0;
+            color: white;
+        }
+
+        .course-title{
+            color: white;
+        }
+
+        /* Стили для центрирования контента, если нужно */
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-btn"></a>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="courses.html">Курсы</a></li>
+                </ul>
+            </nav>
+            <button class="user-avatar-btn" id="profileBtn"></button>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <h1 class="course-title">Курс Git с нуля</h1>
+
+        <div class="course-video">
+            <video controls width="1280" height="720" poster="images/git.jpg">
+                <source src="video/moe-video.mp4" type="video/mp4">
+                <source src="video/moe-video.webm" type="video/webm">
+                Ваш браузер не поддерживает тег video.
+            </video>
+        </div>
+
+        <div class="course-info">
+    <h1 class="course-title">Git для начинающих: Система контроля версий с нуля</h1>
+
+    <h2>Краткое описание:</h2>
+    <p>
+        Этот курс создан для тех, кто хочет научиться эффективно работать с кодом и проектами, отслеживать изменения, возвращаться к предыдущим версиям и сотрудничать с другими разработчиками. Git - это самая популярная распределенная система контроля версий, и понимание ее основ является ключевым навыком для любого, кто занимается разработкой.
+    </p>
+
+    <h2>Кому подходит этот курс:</h2>
+    <ul>
+        <li>Разработчикам (начинающим и тем, кто еще не использовал системы контроля версий).</li>
+        <li>Дизайнерам, контент-менеджерам и всем, кто работает с файлами, требующими отслеживания изменений и командной работы.</li>
+        <li>Студентам и тем, кто хочет освоить инструмент, широко используемый в индустрии.</li>
+    </ul>
+
+    <h2>Что вы узнаете:</h2>
+    <ul>
+        <li>
+            <strong>Основы контроля версий:</strong> Зачем нужен Git и как он отличается от других систем.
+        </li>
+        <li>
+            <strong>Установка и настройка Git:</strong> Как установить Git на вашу систему и выполнить базовую настройку.
+            <pre><code>
+git --version
+git config --global user.name "Ваше Имя"
+git config --global user.email "ваш.email@example.com"
+            </code></pre>
+        </li>
+        <li>
+            <strong>Создание репозитория:</strong> Как инициализировать новый Git-репозиторий или клонировать существующий.
+            <pre><code>
+git init
+git clone &lt;URL репозитория&gt;
+            </code></pre>
+        </li>
+        <li>
+            <strong>Жизненный цикл файлов в Git:</strong> Понимание состояний файлов (Untracked, Staged, Modified).
+        </li>
+        <li>
+            <strong>Сохранение изменений:</strong> Как добавить файлы в staging area и создать коммит.
+            <pre><code>
+git status
+git add &lt;имя файла&gt;
+git add .
+git commit -m "Ваше сообщение коммита"
+            </code></pre>
+        </li>
+        <li>
+            <strong>Просмотр истории изменений:</strong> Как посмотреть список коммитов.
+            <pre><code>
+git log
+git log --oneline
+            </code></pre>
+        </li>
+         <li>
+            <strong>Возврат к предыдущим версиям:</strong> Как отменить изменения или вернуться к предыдущему коммиту.
+             <pre><code>
+git reset &lt;идентификатор коммита&gt;
+git checkout &lt;идентификатор коммита&gt; &lt;имя файла&gt;
+             </code></pre>
+         </li>
+        <li>
+            <strong>Работа с удаленными репозиториями:</strong> Как связать локальный репозиторий с удаленным (например, на GitHub, GitLab) и обмениваться изменениями.
+            <pre><code>
+git remote add origin &lt;URL удаленного репозитория&gt;
+git push origin &lt;название ветки&gt;
+git pull origin &lt;название ветки&gt;
+            </code></pre>
+        </li>
+        <li>
+            <strong>Ветки (Branches):</strong> Как создавать, переключаться и объединять ветки.
+            <pre><code>
+git branch &lt;название ветки&gt;
+git checkout &lt;название ветки&gt;
+git merge &lt;название ветки&gt;
+            </code></pre>
+        </li>
+        <li>
+            <strong>Решение конфликтов слияния (Merge Conflicts):</strong> Как возникают конфликты и как их разрешать.
+        </li>
+    </ul>
+
+    <h2>Требования:</h2>
+    <ul>
+        <li>Базовое понимание работы с файлами и папками на компьютере.</li>
+        <li>Желание учиться и практиковаться.</li>
+        <li>Установленный Git на вашем компьютере (мы покажем, как это сделать).</li>
+    </ul>
+
+    <h2>Почему стоит пройти этот курс:</h2>
+    <ul>
+        <li><strong>Надежное отслеживание изменений:</strong> Вы больше никогда не потеряете важные версии вашего кода.</li>
+        <li><strong>Упрощение командной работы:</strong> Научитесь эффективно сотрудничать с другими разработчиками.</li>
+        <li><strong>Индустриальный стандарт:</strong> Знание Git является обязательным требованием для большинства вакансий в IT.</li>
+        <li><strong>Практический подход:</strong> Отработаем все основные команды на реальных примерах.</li>
+    </ul>
+
+    <h2>Программа курса (пример):</h2>
+    <ul>
+        <li>Модуль 1: Введение в контроль версий и Git</li>
+        <li>Модуль 2: Установка и базовая настройка</li>
+        <li>Модуль 3: Создание и клонирование репозиториев</li>
+        <li>Модуль 4: Сохранение изменений (add, commit)</li>
+        <li>Модуль 5: Просмотр истории и возврат к версиям</li>
+        <li>Модуль 6: Работа с удаленными репозиториями (push, pull)</li>
+        <li>Модуль 7: Ветки и их слияние</li>
+        <li>Модуль 8: Разрешение конфликтов</li>
+        <li>Модуль 9: Практика и продвинутые команды (базово)</li>
+    </ul>
+
+    <h2>После прохождения курса вы сможете:</h2>
+    <ul>
+        <li>Использовать Git для своих личных проектов.</li>
+        <li>Работать в команде, используя общий Git-репозиторий.</li>
+        <li>Отслеживать и управлять изменениями в ваших файлах.</li>
+        <li>Применять основные команды Git в повседневной работе.</li>
+    </ul>
+
+    <p><strong>Готовы взять под контроль свой код? Записывайтесь на курс "Git для начинающих" и начните использовать эту мощную систему!</strong></p>
+
+</div>
+
+    </div>
+
+    <footer>
+        <p>Learn Sync © 2025</p>
+    </footer>
+
+</body>
+</html>

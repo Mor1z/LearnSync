@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>LearnSync | Личный кабинет</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <a href="index.html" class="logo-btn"></a>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="courses.html">Курсы</a></li>
+            </ul>
+        </nav>
+        <button class="user-avatar-btn" id="profileBtn"></button>
+    </div>
+</header>
+
+<main class="profile">
+    <!-- Сайдбар -->
+    <aside class="sidebar">
+        <ul>
+            <li class="active">Личные данные</li>
+            <li>Курсы</li>
+            <li>История покупок</li>
+        </ul>
+    </aside>
+
+    <!-- Основное содержимое -->
+    <section class="content">
+        <h2>Личные данные</h2>
+        <div class="profile-card">
+            <div class="avatar">
+                <img src="user.jpg" alt="Аватар">
+                <button class="btn-secondary">Загрузить фото</button>
+                <button class="btn-danger">Удалить</button>
+            </div>
+
+            <div class="info">
+                <div class="row">
+                    <div class="col">
+                        <label>Фамилия</label>
+                        <input type="text">
+                    </div>
+                    <div class="col">
+                        <label>Телефон</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Имя</label>
+                        <input type="text">
+                    </div>
+                    <div class="col">
+                        <label>Почта</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Отчество</label>
+                        <input type="text">
+                    </div>
+                    <div class="col">
+                        <label>Дата рождения</label>
+                        <input type="date">
+                    </div>
+                </div>
+                <button class="btn-primary">Сохранить изменения</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Learn Sync © 2025</p>
+</footer>
+</body>
+</html>

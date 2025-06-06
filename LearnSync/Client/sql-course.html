@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс | SQL</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для страницы курса */
+        .course-container {
+    max-width: 900px; /* Или другая ширина */
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex; /* Делаем контейнер Flex */
+    flex-direction: column; /* Располагаем элементы в колонку */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+        .course-title {
+            text-align: center; /* Центрируем название курса */
+            margin-bottom: 20px; /* Отступ снизу названия */
+        }
+
+        .course-video {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+    max-width: 1280px;
+}
+
+.course-video iframe,
+.course-video object,
+.course-video embed {
+    width: 100%; /* Видео занимает 100% ширины родителя (1280px) */
+    height: 100%; /* Видео занимает 100% высоты родителя (720px) */
+}
+
+
+.course-info {
+            margin-bottom: 30px; /* Отступ снизу информации */
+            color: white;
+        }
+
+        .course-info h2 {
+            margin-top: 0;
+            color: white;
+        }
+
+        .course-title{
+            color: white;
+        }
+
+        /* Стили для центрирования контента, если нужно */
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-btn"></a>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="courses.html">Курсы</a></li>
+                </ul>
+            </nav>
+            <button class="user-avatar-btn" id="profileBtn"></button>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <h1 class="course-title">Курс SQL с нуля</h1>
+
+        <div class="course-video">
+            <video controls width="1280" height="720" poster="images/sql.jpg">
+                <source src="video/moe-video.mp4" type="video/mp4">
+                <source src="video/moe-video.webm" type="video/webm">
+                Ваш браузер не поддерживает тег video.
+            </video>
+        </div>
+
+        <div class="course-info">
+    <h1 class="course-title">SQL для начинающих: Основы работы с базами данных с нуля</h1>
+
+    <h2>Краткое описание:</h2>
+    <p>
+        Этот курс создан для тех, кто хочет научиться работать с базами данных: извлекать, изменять, добавлять и удалять данные. SQL (Structured Query Language) - это стандартный язык для управления реляционными базами данных. Если вы новичок в работе с данными или только начинаете свой путь в IT и хотите освоить фундаментальный навык, этот курс - идеальная отправная точка.
+    </p>
+
+    <h2>Кому подходит этот курс:</h2>
+    <ul>
+        <li>Аналитикам данных и тем, кто работает с большими объемами информации.</li>
+        <li>Разработчикам (как фронтенд, так и бэкенд), которым необходимо взаимодействовать с базами данных.</li>
+        <li>Тестировщикам, для проверки данных в базах.</li>
+        <li>Всем, кто хочет освоить базовые принципы работы с реляционными базами данных.</li>
+    </ul>
+
+    <h2>Что вы узнаете:</h2>
+    <ul>
+        <li>
+            <strong>Основы баз данных:</strong> Что такое реляционные базы данных и зачем нужен SQL.
+        </li>
+        <li>
+            <strong>Получение данных:</strong> Как извлекать данные из одной или нескольких таблиц с помощью оператора `SELECT`.
+            <pre><code>
+SELECT column1, column2
+FROM table_name
+WHERE condition;
+            </code></pre>
+        </li>
+        <li>
+            <strong>Фильтрация данных:</strong> Использование `WHERE` для отбора строк по заданным условиям.
+            <pre><code>
+SELECT *
+FROM Customers
+WHERE Country = 'Mexico';
+            </code></pre>
+        </li>
+        <li>
+            <strong>Сортировка данных:</strong> Как упорядочивать результаты с помощью `ORDER BY`.
+            <pre><code>
+SELECT *
+FROM Products
+ORDER BY Price DESC; /* Сортировка по убыванию цены */
+            </code></pre>
+        </li>
+        <li>
+            <strong>Ограничение выборки:</strong> Использование `LIMIT` или `TOP` (зависит от СУБД) для ограничения количества возвращаемых строк.
+            <pre><code>
+SELECT *
+FROM Orders
+LIMIT 10; /* В MySQL и PostgreSQL */
+            </code></pre>
+        </li>
+        <li>
+            <strong>Агрегатные функции:</strong> `COUNT`, `SUM`, `AVG`, `MIN`, `MAX` для выполнения вычислений над наборами данных.
+            <pre><code>
+SELECT COUNT(CustomerID)
+FROM Customers;
+
+SELECT AVG(Price)
+FROM Products;
+            </code></pre>
+        </li>
+        <li>
+            <strong>Группировка данных:</strong> Использование `GROUP BY` для группировки строк по значениям столбцов.
+            <pre><code>
+SELECT Country, COUNT(CustomerID)
+FROM Customers
+GROUP BY Country;
+            </code></pre>
+        </li>
+        <li>
+            <strong>Объединение таблиц (JOINs):</strong> Как объединять данные из нескольких таблиц (INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN).
+            <pre><code>
+SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+            </code></pre>
+        </li>
+         <li>
+            <strong>Добавление данных:</strong> Использование оператора `INSERT INTO` для добавления новых строк.
+            <pre><code>
+INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Cardinal', 'Stavanger', 'Norway');
+            </code></pre>
+         </li>
+        <li>
+            <strong>Изменение данных:</strong> Использование оператора `UPDATE` для изменения существующих строк.
+            <pre><code>
+UPDATE Customers
+SET City = 'Oslo'
+WHERE CustomerID = 1;
+            </code></pre>
+        </li>
+        <li>
+            <strong>Удаление данных:</strong> Использование оператора `DELETE FROM` для удаления строк.
+            <pre><code>
+DELETE FROM Customers
+WHERE CustomerName = 'Cardinal';
+            </code></pre>
+        </li>
+        <li>
+            <strong>Создание и изменение таблиц (базово):</strong> Операторы `CREATE TABLE` и `ALTER TABLE`.
+             <pre><code>
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255)
+);
+            </code></pre>
+        </li>
+    </ul>
+
+    <h2>Требования:</h2>
+    <ul>
+        <li>Желание учиться и практиковаться.</li>
+        <li>Компьютер и доступ к какой-либо СУБД (системе управления базами данных, например, SQLite, MySQL, PostgreSQL) или онлайн-песочнице SQL.</li>
+    </ul>
+
+    <h2>Почему стоит пройти этот курс:</h2>
+    <ul>
+        <li><strong>Фундаментальный навык:</strong> SQL является одним из основных языков для работы с данными.</li>
+        <li><strong>Широкое применение:</strong> SQL используется во многих областях IT и за ее пределами.</li>
+        <li><strong>Практический подход:</strong> Отработаем основные запросы на реальных примерах данных.</li>
+        <li><strong>Основа для дальнейшего роста:</strong> Знание SQL откроет двери к изучению баз данных более глубоко и работе с инструментами анализа данных.</li>
+    </ul>
+
+    <h2>Программа курса (пример):</h2>
+    <ul>
+        <li>Модуль 1: Введение в базы данных и SQL</li>
+        <li>Модуль 2: Оператор SELECT и фильтрация данных (WHERE)</li>
+        <li>Модуль 3: Сортировка, ограничение выборки и агрегатные функции</li>
+        <li>Модуль 4: Группировка данных (GROUP BY)</li>
+        <li>Модуль 5: Объединение таблиц (JOINs)</li>
+        <li>Модуль 6: Добавление, изменение и удаление данных (INSERT, UPDATE, DELETE)</li>
+        <li>Модуль 7: Создание и изменение таблиц (базово)</li>
+        <li>Модуль 8: Практические задания и мини-проекты</li>
+    </ul>
+
+    <h2>После прохождения курса вы сможете:</h2>
+    <ul>
+        <li>Писать базовые SQL-запросы для получения и фильтрации данных.</li>
+        <li>Объединять данные из нескольких таблиц.</li>
+        <li>Добавлять, изменять и удалять данные в базе.</li>
+        <li>Понимать основы работы с реляционными базами данных.</li>
+    </ul>
+
+    <p><strong>Готовы погрузиться в мир данных? Записывайтесь на курс "SQL для начинающих" и научитесь управлять информацией!</strong></p>
+
+</div>
+
+    </div>
+
+    <footer>
+        <p>Learn Sync © 2025</p>
+    </footer>
+
+</body>
+</html>

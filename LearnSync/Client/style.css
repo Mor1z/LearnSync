@@ -1,0 +1,876 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Шапка */
+.header-container {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    border-bottom: 1px solid #333;
+    position: relative;
+    z-index: 1000;
+    font-family: Montserrat, sans-serif;
+    color: white;
+}
+
+.logo-btn {
+    background: url('images/logo.jpg') no-repeat center center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.main-menu li {
+    padding: 8px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.main-menu li.active {
+    background: #2F2F2F;
+    color: #4CAF50;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.main-menu a {
+    display: block;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.main-menu a:hover {
+    background: rgba(76, 175, 80, 0.2);
+    opacity: 0.7;
+}
+
+.user-avatar-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url('images/user.png') no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-left: auto;
+}
+
+.user-avatar-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Кнопки */
+.btn-primary {
+    padding: 12px 24px;
+    background: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #45a049;
+}
+
+.btn-secondary {
+    padding: 8px 16px;
+    background: #444;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #555;
+}
+
+.btn-danger {
+    background: #f44336;
+    margin-left: 10px;
+}
+
+.btn-danger:hover {
+    background: #d32f2f;
+}
+
+/* Кнопка профиля */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+}
+
+/* Основной контент */
+.main-content {
+    margin: 60px 0;
+    padding: 0 20px;
+}
+
+/* Сетка курсов */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.course-card {
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-header {
+    position: relative;
+    padding: 20px;
+    color: white;
+    text-align: left;
+}
+
+.course-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.course-header img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+}
+
+.course-header h2 {
+    display: inline-block;
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+}
+
+.course-info {
+    padding: 20px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.course-info p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.course-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid #444;
+    position: relative;
+    z-index: 1;
+}
+
+.course-footer span {
+    font-weight: bold;
+}
+
+/* О проекте */
+.strip-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0px 20px;
+    position: relative;
+}
+
+.strip {
+    width: 80%;
+    height: 2px;
+    background-color: white;
+    position: relative;
+}
+
+.strip::before,
+.strip::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Добавим лёгкую тень для контраста */
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1); /* Необязательно */
+}
+
+.strip::before {
+    left: -2px;
+}
+
+.strip::after {
+    right: -2px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Центральная полоса (3px) */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* Соединительные линии */
+.timeline-block::before {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 3px;
+    background-color: white;
+    top: 50%;
+    z-index: 1;
+}
+
+/* Кружки на соединительных линиях */
+.timeline-block::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-40%);
+    z-index: 2;
+}
+
+/* Левые блоки (полоса вправо, кружок слева) */
+.timeline-block:nth-child(odd)::before {
+    right: -80px;
+}
+.timeline-block:nth-child(odd)::after {
+    right: 70px;
+}
+
+/* Правые блоки (полоса влево, кружок справа) */
+.timeline-block:nth-child(even)::before {
+    left: -80px;
+}
+.timeline-block:nth-child(even)::after {
+    left: 70px;
+}
+
+/* Остальные стили остаются без изменений */
+.timeline-block {
+    position: relative;
+    width: 40%;
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.timeline-block:nth-child(even) {
+    margin-left: 60%;
+}
+
+.timeline-block:nth-child(odd) {
+    margin-right: 60%;
+}
+
+.icon-container {
+    margin: 0 auto 15px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+h2 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+}
+
+p {
+    margin: 8px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #bbb;
+}
+
+.divider {
+    width: 80px;
+    height: 3px;
+    background-color: white;
+    margin: 20px auto;
+    opacity: 0.7;
+}
+
+/* Разделители под иконкой (3px) */
+.divider {
+    width: 80px;
+    height: 3px;
+    background-color: white;
+    margin: 20px auto;
+    opacity: 0.7;
+}
+
+/* Карточки курсов */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.course-image-wrapper {
+    margin: -20px -20px 20px;
+    overflow: hidden;
+}
+
+.course-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.feature-card h3 {
+    margin: 0;
+    font-weight: bold;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #444;
+}
+
+.price {
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+/* Блок приветствия */
+.welcome-section {
+    position: relative;
+    padding: 50px;
+    background: linear-gradient(to right, #2d2d2d, #444);
+    text-align: center;
+}
+
+.welcome-section::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #1a1a1a;
+}
+
+/* Табы для авторизации */
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #4CAF50;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab.active {
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+}
+
+/* Формы */
+.form {
+    display: none;
+    padding: 40px;
+    background: #2d2d2d;
+    border-radius: 10px;
+    text-align: center;
+    animation-duration: 0.5s;
+}
+
+.form.active {
+    display: block;
+}
+
+.form h2 {
+    margin-bottom: 30px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #444;
+    background: transparent;
+    color: white;
+}
+
+.form label {
+    margin: 15px 0;
+    cursor: pointer;
+    display: block;
+}
+
+.form label input {
+    margin-right: 10px;
+}
+
+/* Стили слайдера */
+.simple-slider-container {
+    width: 60%; 
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Стили для контейнера изображений */
+.simple-slider {
+    display: flex; /* Располагаем изображения в ряд */
+    width: 400%; /* Ширина для 4 изображений (100% * количество) */
+    transition: margin-left 0.5s ease; /* Плавный переход при смене слайда */
+    /* animation: slide-animation 16s infinite linear; */
+}
+
+/* Стили для каждого изображения в слайдере */
+.simple-slider img {
+    width: 25%; /* Каждое изображение занимает 25% от ширины .simple-slider */
+    height: auto; /* Сохраняем пропорции */
+    display: block; /* Убираем возможные лишние пробелы */
+}
+
+/* Стили для кнопок навигации */
+.simple-slider-container .slider-button {
+    position: absolute; /* Абсолютное позиционирование относительно .simple-slider-container */
+    top: 50%; /* Выравнивание по вертикали по центру */
+    transform: translateY(-50%); /* Корректировка для точного центрирования */
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1; /* Убедитесь, что кнопки поверх изображений */
+    font-size: 18px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease; /* Плавное изменение прозрачности при наведении */
+}
+
+.simple-slider-container .slider-button:hover {
+    opacity: 1;
+}
+
+/* Позиционирование кнопки "Предыдущий" */
+.simple-slider-container .prev {
+    left: 10px;
+}
+
+/* Позиционирование кнопки "Следующий" */
+.simple-slider-container .next {
+    right: 10px;
+}
+
+
+/* Секция работ студентов */
+.student-works {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.work-item {
+    position: relative;
+    width: 48%;
+    height: 300px;
+    background: #2d2d2d;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1 1 48%;
+    min-width: 300px;
+}
+
+.work-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+}
+
+/* Секция статистики */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    width: 30%;
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    flex: 1 1 30%;
+    min-width: 250px;
+}
+
+.stat-item h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+.stat-item p {
+    line-height: 1.5;
+}
+
+/* Секция скачивания */
+.download-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.download-button {
+    padding: 20px;
+    background: #444;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.download-button:hover {
+    background: #555;
+}
+
+.download-button img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+/* Личный кабинет */
+.profile {
+    display: flex;
+    gap: 20px;
+    margin-top: 60px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    width: 200px;
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 0 0 200px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar li.active {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.content {
+    flex: 1;
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.profile-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.avatar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.info {
+    padding: 20px;
+}
+
+.info .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.info .col {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.info label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .student-works,
+    .stats {
+        flex-wrap: wrap;
+    }
+
+    .work-item {
+        width: 100%;
+    }
+
+    .stat-item {
+        width: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-item,
+    .stat-item {
+        width: 100%;
+    }
+
+    .profile {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.feature-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px; /* Отступ снизу каждого блока */
+}
+
+.block-divider {
+    height: 1px;
+    background: #eee;
+    margin: 30px 0;
+}
+
+.feature-image { flex: 0 0200px; }
+.feature-short { flex: 0 0 250px; }
+.feature-full { flex: 1; }
+
+@media (max-width: 768px) {
+    .feature-block { flex-direction: column; }
+    .block-divider { margin: 20px 0; }
+}
+
+.leafsync-media-block {
+    padding: 40px 0;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2:1 соотношение */
+    gap: 20px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slider-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.side-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Стили для Swiper */
+.swiper {
+    width: 100%;
+    height: 400px; /* Подберите под ваш контент */
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: 1fr; /* Слайдер на весь экран */
+    }
+    .side-photo {
+        display: none; /* Или оставьте под слайдером */
+    }
+}
+
+.about-project-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.user-choice-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 30px 0px 10px;
+    padding: 10px 0;
+}
+
+.learnsync-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.feature-blocks-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* Если используются flexbox или grid, возможно, потребуются дополнительные стили для центрирования содержимого */
+}
